@@ -3,7 +3,7 @@
  * Plugin Name: WP Testimonial Pages
  * Plugin URI: http://adriantoro.infoeplus.com
  * Description: Display Testimonials in your site and create landing pages with full width testominal images.
- * Version: 0.0.3
+ * Version: 0.0.4
  * Author: Adrian Toro
  * Domain Path: /languages
  * Text Domain: wp-testimonial-pages

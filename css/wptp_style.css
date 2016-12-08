@@ -61,6 +61,8 @@ section#testimonial .testimonial.box a div.photo {
   border: 12px solid white;
 }
 section#testimonial .testimonial.box a div.photo img {
+  width: auto;  
+  height: 100%;
   margin: 0 auto;
   top: 0;
   bottom: 0;
@@ -68,7 +70,6 @@ section#testimonial .testimonial.box a div.photo img {
   left: 0;
   right: 0;
   vertical-align: middle;
-  height: 100%;
   background: white;
 }
 section#testimonial .testimonial.box a div.description {
@@ -345,4 +346,15 @@ body.single-wptp_testimonial section#download-pdf a:hover {
   -webkit-transition: all 0.4s;
 }
 
-
+@media screen and (max-width:980px){
+	section#testimonial .testimonial.box a div.photo {
+	  width: 200px;
+	  height: 200px;
+	  overflow: hidden;
+	  position: relative;
+	  border: 12px solid white;
+	}
+	body.single-wptp_testimonial section div.importantQuote {
+		max-width:96%;
+	}
+}

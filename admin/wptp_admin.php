@@ -30,8 +30,13 @@ function wptp_meta_box_render( $post ) {
 	$wptp_menu = array_key_exists('wptp_menu',$values) ? $values['wptp_menu'][0] : '';
 	$wptp_style = array_key_exists('wptp_style',$values) ? $values['wptp_style'][0] : '';
 	$wptp_video = array_key_exists('wptp_video',$values) ? $values['wptp_video'][0] : '';
+	$wptp_pdf = array_key_exists('wptp_pdf',$values) ? $values['wptp_pdf'][0] : '';
 	
 	wp_nonce_field( plugin_basename( __FILE__ ), 'wptp_text_box_content_nonce' );
+		 
+	echo '<h2>PDF file</h2>';
+	echo '<p><b>(NOTE: User story will link to PDF directly if this field is used)<b></p>';
+	echo '<input id="wptp_pdf" name="wptp_pdf" style="width:100%; max-width:600px;" value="'.esc_attr($wptp_pdf).'" placeholder="PDF URL" />';	
 		 
 	echo '<h2>Background Video</h2>';
 	echo '<input id="wptp_video" name="wptp_video" style="width:100%; max-width:600px;" value="'.esc_attr($wptp_video).'" placeholder="Video URL" />';	
@@ -89,6 +94,9 @@ function wptp_text_box_save( $post_id ) {
 
 		$wptp_video = $_POST['wptp_video'];
 		update_post_meta( $post_id, 'wptp_video', $wptp_video);
+
+		$wptp_video = $_POST['wptp_pdf'];
+		update_post_meta( $post_id, 'wptp_pdf', $wptp_video);
 	}
 	
 	if ( wp_verify_nonce( $_POST['wptp_text_box_info_nonce'], plugin_basename( __FILE__ ) )  ){
